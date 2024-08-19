@@ -21,7 +21,7 @@ const Ipa = () => {
             `${api}/i/${safeBtoa(
               encodeURIComponent(objStore.raw_url) +
                 "/" +
-                baseName(encodeURIComponent(objStore.obj.name))
+                baseName(encodeURIComponent(objStore.obj.name)),
             )}.plist`
           }
           onClick={() => {
@@ -56,7 +56,12 @@ const Ipa = () => {
          warning  橙色
          danger   红色
          */}
-        <Button colorScheme="danger" as="a" href={objStore.raw_url} target="_blank">
+        <Button
+          colorScheme="danger"
+          as="a"
+          href={objStore.raw_url}
+          target="_blank"
+        >
           {t("home.preview.download")}
         </Button>
         <Button colorScheme="accent" onClick={() => copyCurrentRawLink(true)}>
